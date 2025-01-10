@@ -25,6 +25,17 @@ public class ExerciseModel implements Serializable {
     @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SectionExercise> sectionExercises = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserModel creator;
+
+    // Getters and Setters
+    public void setCreator(UserModel creator) {
+        this.creator = creator;
+    }
+    public UserModel getCreator() {
+        return creator;
+    }
     public void setTitle(String title) {
         this.title = title;
     }

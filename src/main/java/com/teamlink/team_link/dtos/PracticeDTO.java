@@ -8,7 +8,7 @@ public record PracticeDTO(
         String description,
         LocalDateTime time,
         String place,
-        UUID groupId,
+        Set<UUID> groupIds,
         UUID planId,
         Set<UUID> attendeesIds
 ) {

@@ -54,6 +54,9 @@ public class UserModel implements Serializable {
     @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<PlanModel> plans = new HashSet<>();
 
+    @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ExerciseModel> exercises = new HashSet<>();
+
     // Other methods
     public void addPractice(PracticeModel practice) {
         practices.add(practice);
@@ -67,8 +70,17 @@ public class UserModel implements Serializable {
     public void addGroup(GroupModel group) {
         groups.add(group);
     }
+    public void addExercise(ExerciseModel exercise) {
+        exercises.add(exercise);
+    }
 
     // Getters and Setters
+    public void setExercises(Set<ExerciseModel> exercises) {
+        this.exercises = exercises;
+    }
+    public Set<ExerciseModel> getExercises() {
+        return exercises;
+    }
     public UUID getId() {
         return id;
     }

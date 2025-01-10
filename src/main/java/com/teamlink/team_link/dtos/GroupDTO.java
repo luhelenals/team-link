@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public record GroupDTO(
         String description,
-        Set<UUID> coaches,
-        Set<UUID> athletes
+        Set<UUID> coachIds,
+        Set<UUID> athleteIds
 ) {
 }

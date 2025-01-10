@@ -4,6 +4,7 @@ import java.util.UUID;
 
 public record SectionExerciseDTO(
         int duration,
-        UUID exerciseId
+        UUID exerciseId,
+        UUID sectionId
 ) {
 }
